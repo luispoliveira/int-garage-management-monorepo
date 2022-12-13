@@ -2,8 +2,8 @@ import * as bcrypt from 'bcrypt';
 
 export class PasswordUtils {
   static async hash(password: string): Promise<string> {
-    const salt = await bcrypt.genSalt(10);
-    return await bcrypt.hash(password, 10);
+    const salt = await bcrypt.genSalt();
+    return await bcrypt.hash(password, salt);
   }
 
   static async compare(

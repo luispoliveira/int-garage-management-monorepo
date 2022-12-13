@@ -1,0 +1,20 @@
+version: '3.4'
+
+volumes:
+  garage_management_db_data:
+    name: garage_management_db_data
+
+services:
+  postgres:
+    container_name: postgres
+    image: postgres:13
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: garage_management
+      POSTGRES_USER: garage_management
+      POSTGRES_PASSWORD: garage_management
+    volumes:
+      - garage_management_db_data:/var/lib/postgresql/data
+
+#HOW TO RUN: docker-compose up --build -d

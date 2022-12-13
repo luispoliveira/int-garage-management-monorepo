@@ -15,14 +15,27 @@ export class ResourcesUsersService implements OnModuleInit {
     username: string;
     password: string;
     email: string;
-  };
+  } | null = null;
 
   async onModuleInit() {
-    this.adminUser = this.configService.get('admin');
+    const adminConfig = this.configService.get<{
+      username: string;
+      password: string;
+      email: string;
+    }>('admin');
+
+    if (!adminConfig) {
+      Logger.warn('Admin user not configured', ResourcesUsersService.name);
+      return;
+    }
+
+    this.adminUser = adminConfig;
     await this.ensureAdminUser();
   }
 
   private async ensureAdminUser() {
+    if (!this.adminUser) return;
+
     const adminUser = await this.prisma.user.findUnique({
       where: {
         username: this.adminUser.username,
@@ -58,6 +71,10 @@ export class ResourcesUsersService implements OnModuleInit {
 
   async findUnique(args: Prisma.UserFindUniqueArgs) {
     return await this.prisma.user.findUnique(args);
+  }
+
+  async findMany(args: Prisma.UserFindManyArgs) {
+    return await this.prisma.user.findMany(args);
   }
 
   async update(args: Prisma.UserUpdateArgs) {

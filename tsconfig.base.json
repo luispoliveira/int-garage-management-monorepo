@@ -15,10 +15,15 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@int-garage-management-monorepo/auth": ["libs/auth/src/index.ts"],
       "@int-garage-management-monorepo/core": ["libs/core/src/index.ts"],
+      "@int-garage-management-monorepo/prisma-nestjs-graphql": [
+        "prisma/generated/prisma-nestjs-graphql/index.ts"
+      ],
       "@int-garage-management-monorepo/resources/users": [
         "libs/resources/users/src/index.ts"
       ],
+      "@int-garage-management-monorepo/shared": ["libs/shared/src/index.ts"],
       "@int-garage-management-monorepo/utils": ["libs/utils/src/index.ts"]
     }
   },

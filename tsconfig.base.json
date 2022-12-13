@@ -15,7 +15,11 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@int-garage-management-monorepo/core": ["libs/core/src/index.ts"]
+      "@int-garage-management-monorepo/core": ["libs/core/src/index.ts"],
+      "@int-garage-management-monorepo/resources/users": [
+        "libs/resources/users/src/index.ts"
+      ],
+      "@int-garage-management-monorepo/utils": ["libs/utils/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

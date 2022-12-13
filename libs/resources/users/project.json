@@ -1,0 +1,16 @@
+{
+  "name": "resources-users",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/resources/users/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/resources/users/**/*.ts"]
+      }
+    }
+  },
+  "tags": ["prisma; nestjs; db; graphql"]
+}

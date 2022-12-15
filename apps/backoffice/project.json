@@ -39,8 +39,8 @@
           "outputHashing": "all",
           "fileReplacements": [
             {
-              "replace": "apps/backoffice/src/environments/environment.ts",
-              "with": "apps/backoffice/src/environments/environment.prod.ts"
+              "replace": "../environments/environment.ts",
+              "with": "../environment.prod.ts"
             }
           ]
         },

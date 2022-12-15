@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './app.routes';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CoreModule } from './core/core.module';
+import { AngularCoreModule } from '@int-garage-management-monorepo/angular-core';
 
 @NgModule({
   declarations: [AppComponent],
@@ -13,7 +13,7 @@ import { CoreModule } from './core/core.module';
     BrowserModule,
     RouterModule.forRoot(appRoutes, { initialNavigation: 'enabledBlocking' }),
     BrowserAnimationsModule,
-    CoreModule,
+    AngularCoreModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,5 +1,5 @@
 import * as CryptoJS from 'crypto-js';
-import { environment } from '../../environments/environment';
+import { environment } from '@int-garage-management-monorepo/environments';
 
 export class Storage {
   private static _passPhrase = environment.passPhrase;

@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { combineLatest, Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { environment } from '../../../environments/environment';
-import { Storage } from '../../libs/storage';
+import { Storage } from '../../utils/storage.utils';
 import { AuthUtils } from './auth.utils';
+import { environment } from '@int-garage-management-monorepo/environments';
 
 @Injectable()
 export class AuthService {

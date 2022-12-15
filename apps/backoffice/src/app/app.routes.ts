@@ -1,5 +1,5 @@
 import { Route } from '@angular/router';
-import { NoAuthGuard } from './core/auth/guards/no-auth.guard';
+import { NoAuthGuard } from '@int-garage-management-monorepo/angular-core';
 
 export const appRoutes: Route[] = [
   {

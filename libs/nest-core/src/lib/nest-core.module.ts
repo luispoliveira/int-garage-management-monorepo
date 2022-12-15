@@ -1,5 +1,5 @@
 import { Module, Global } from '@nestjs/common';
-import { CoreService } from './core.service';
+import { NestCoreService } from './nest-core.service';
 import { ConfigModule } from '@nestjs/config';
 import { configuration } from './config/configuration';
 import { validationSchema } from './config/validation';
@@ -10,7 +10,7 @@ import {
   ApolloServerPluginLandingPageLocalDefault,
   ApolloServerPluginLandingPageProductionDefault,
 } from 'apollo-server-core';
-import { CoreResolver } from './core.resolver';
+import { NestCoreResolver } from './nest-core.resolver';
 
 @Global()
 @Module({
@@ -21,11 +21,11 @@ import { CoreResolver } from './core.resolver';
       validationSchema,
     }),
     GraphQLModule.forRoot({
-      debug: process.env.environment === 'development',
+      debug: process.env['environment'] === 'development',
       playground: false,
       driver: ApolloDriver,
       plugins:
-        process.env.environment === 'production'
+        process.env['environment'] === 'production'
           ? [ApolloServerPluginLandingPageProductionDefault()]
           : [ApolloServerPluginLandingPageLocalDefault()],
       subscriptions: {
@@ -36,7 +36,7 @@ import { CoreResolver } from './core.resolver';
       sortSchema: true,
     }),
   ],
-  providers: [CoreService, PrismaService, CoreResolver],
-  exports: [CoreService, PrismaService],
+  providers: [NestCoreService, PrismaService, NestCoreResolver],
+  exports: [NestCoreService, PrismaService],
 })
-export class CoreModule {}
+export class NestCoreModule {}

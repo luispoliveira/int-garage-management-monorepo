@@ -1,5 +1,5 @@
 import { Prisma } from '@prisma/client';
-import { PrismaService } from '@int-garage-management-monorepo/core';
+import { PrismaService } from 'libs/nest-core/src';
 import { Injectable, Logger, OnModuleInit } from '@nestjs/common';
 import { PasswordUtils } from '@int-garage-management-monorepo/utils';
 import { ConfigService } from '@nestjs/config';

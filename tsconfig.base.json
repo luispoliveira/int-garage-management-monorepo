@@ -19,7 +19,7 @@
         "libs/angular-core/src/index.ts"
       ],
       "@int-garage-management-monorepo/auth": ["libs/auth/src/index.ts"],
-      "@int-garage-management-monorepo/core": ["libs/core/src/index.ts"],
+      "@int-garage-management-monorepo/nest-core": ["libs/nest-core/src/index.ts"],
       "@int-garage-management-monorepo/prisma-nestjs-graphql": [
         "prisma/generated/prisma-nestjs-graphql/index.ts"
       ],
